@@ -3,6 +3,26 @@ include "inc/header.php";
 
 ?>
 
+
+<?php
+
+if($_SERVER['REQUEST_METHOD'] =='POST'){
+  $username= escape($_POST['username']);
+  $email= escape($_POST['email']);
+  $password= escape($_POST['password']);
+  $password=password_hash($password,PASSWORD_DEFAULT);
+
+$sql="INSERT INTO korisnici(username,email,lozinka) ";
+$sql.= "VALUES('$username','$email','$password')";
+
+confirm(query($sql));
+
+}
+
+
+
+?>
+
     <div class="mask d-flex align-items-center h-100 gradient-custom-3 mt-5">
       <div class="container h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
@@ -11,14 +31,18 @@ include "inc/header.php";
               <div class="card-body p-5">
                 <h2 class="text-uppercase text-center mb-5">Napravi račun</h2>
 
-                <form>
+                <form method="POST">
                   <div class="form-outline mb-4">
                     <input
                       type="text"
-                      id="form3Example1cg"
+                      name="username"
                       class="form-control form-control-lg"
+                      placeholder="username"
+
+                      required
                     />
                     <label class="form-label" for="form3Example1cg"
+                    
                       >Korisničko ime</label
                     >
                   </div>
@@ -26,8 +50,10 @@ include "inc/header.php";
                   <div class="form-outline mb-4">
                     <input
                       type="email"
-                      id="form3Example3cg"
+                      name="email"
                       class="form-control form-control-lg"
+                      placeholder="email"
+                      required
                     />
                     <label class="form-label" for="form3Example3cg"
                       >Vaš Email</label
@@ -37,8 +63,10 @@ include "inc/header.php";
                   <div class="form-outline mb-4">
                     <input
                       type="password"
-                      id="form3Example4cg"
+                      name="password"
                       class="form-control form-control-lg"
+                      placeholder="lozinka"
+                      required
                     />
                     <label class="form-label" for="form3Example4cg"
                       >Lozinka</label
@@ -48,8 +76,9 @@ include "inc/header.php";
                   <div class="form-outline mb-4">
                     <input
                       type="password"
-                      id="form3Example4cdg"
+                      name="repeat_password"
                       class="form-control form-control-lg"
+                      placeholder="ponovite lozinku"
                     />
                     <label class="form-label" for="form3Example4cdg"
                       >Ponovite lozinku</label
@@ -63,7 +92,7 @@ include "inc/header.php";
                       value=""
                       id="form2Example3cg"
                     />
-                    <label class="form-check-label" for="form2Example3g">
+                    <label class="form-check-label" form="form2Example3g" required>
                       Prihvatam sve
                       <a href="#!" class="text-body"
                         ><u>Uvjete korištenja</u></a
@@ -73,8 +102,10 @@ include "inc/header.php";
 
                   <div class="d-flex justify-content-center">
                     <button
-                      type="button"
+                      type="submit"
                       class="btn btn-warning btn-block btn-lg gradient-custom-4 text-body"
+                      placeholder= "submit"
+                      required
                     >
                       Registriraj se
                     </button>

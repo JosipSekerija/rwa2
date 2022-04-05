@@ -12,7 +12,7 @@ include "inc/header.php"
             <p class="lead my-4">
               Nađite što vam odgovara iz široke ponude vozila! Preuzimanje moguće na više lokacija.
             </p>
-         <a href="registracija.html" class="btn btn-primary btn-lg">  Registriraj se</a> 
+         <a href="registracija.php" class="btn btn-primary btn-lg">  Registriraj se</a> 
           </div>
           <img
             class="img-fluid w-50 my-3 d-none d-md-block"

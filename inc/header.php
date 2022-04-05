@@ -40,13 +40,13 @@ include "functions/init.php";
         <div class="collapse navbar-collapse" id="navmenu">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a href="index.html" class="nav-link text-light">Home</a>
+              <a href="index.php" class="nav-link text-light">Home</a>
             </li>
             <li class="nav-item">
               <a href="ponuda.html" class="nav-link text-light">Ponuda</a>
             </li>
             <li class="nav-item">
-              <a href="prijava.html" class="btn btn-warning">Prijava</a>
+              <a href="prijava.php" class="btn btn-warning">Prijava</a>
             </li>
           </ul>
         </div>

@@ -15,9 +15,11 @@ function query($query){
 
 }
 
-functioncon confirm($result){
+function confirm($result){
+
   global $con;
-  if(!result){
+
+  if(!$result){
     die('query failed' .mysqli_error($con));
   }
 }
